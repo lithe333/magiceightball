@@ -45,13 +45,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ballIV.setOnClickListener(this);
 
     }
+    
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        //delay answer
+        answerTV.setText("..asking...");
+        return false;
+    }
 
     @Override
     public void onClick(View v) {
         //create a switch statement
         switch (v.getId()){
             case R.id.magic_ball:
-//                Toast.makeText(MainActivity.this, "8 ball was tapped", Toast.LENGTH_SHORT).show();
+                // adding delay to match with the "..asking..."
+                try {
+                    SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                // Toast.makeText(MainActivity.this, "8 ball was tapped", Toast.LENGTH_SHORT).show();
                 int randomNum = new Random().nextInt(answersArray.length);
                 answerTV.setText(answersArray[randomNum]);
 
@@ -59,5 +72,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    //Before we go any further we need to make it so the app stays in portrait made at all times,  go to manifest
+    // Before we go any further we need to make it so the app stays in portrait made at all times,  go to manifest
 }
