@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">001MagicEightball</string>
-    <string name="my_app_name">001 Magic Eightball</string>
+    <string name="app_name">001 Magic Eightball</string>
     <string name="header">Ask The Magic 8 Ball</string>
     <string name="greeting">Ask a question before you press!</string>
 </resources>
